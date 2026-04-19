@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcsspofn5vwxp"]
+
+[ext_resource type="Script" uid="uid://bl4ne58gkll73" path="res://Scenes/Intoduction_Clip/Script/title.gd" id="1_5dl16"]
+[ext_resource type="FontFile" uid="uid://bnnhj8xv7cg1" path="res://Assets/Font/VCR_OSD_MONO_1.001.ttf" id="1_i5hjq"]
+[ext_resource type="Texture2D" uid="uid://rks7b77hdl71" path="res://Assets/Pictures/Victim3_3_-removebg-preview.png" id="3_3rirr"]
+[ext_resource type="Script" uid="uid://clthllokv7rt2" path="res://Scenes/Intoduction_Clip/Script/test.gd" id="4_3rirr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dl16"]
+font = ExtResource("1_i5hjq")
+font_size = 19
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5dl16")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 399.00003
+offset_right = 179.0
+offset_bottom = 456.00003
+scale = Vector2(3.355, 3.355)
+text = "twenty-
+tweIve"
+label_settings = SubResource("LabelSettings_5dl16")
+
+[node name="Entity" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 10.0
+offset_right = 955.0
+offset_bottom = 627.0
+texture = ExtResource("3_3rirr")
+expand_mode = 1
+script = ExtResource("4_3rirr")
