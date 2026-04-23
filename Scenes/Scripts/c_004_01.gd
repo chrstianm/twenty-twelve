@@ -12,7 +12,7 @@ func _on_forward_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			AudioManager.play_sfx("click")
-#			get_tree().change_scene_to_file("res://Scenes/Game/c_005_01.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Game/c_004_03.tscn")
 
 func _on_wallet_mouse_entered() -> void:
 	CursorManager.set_hover()
