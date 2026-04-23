@@ -60,6 +60,7 @@ offset_left = 469.0
 offset_top = 255.0
 offset_right = 714.33325
 offset_bottom = 439.0
+mouse_filter = 0
 texture = ExtResource("2_qi4da")
 expand_mode = 1
 

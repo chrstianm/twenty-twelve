@@ -17,6 +17,7 @@ func _show_label():
 		AudioManager.stop_all_bgm()
 		AudioManager.play_bgm("ambiance_extreme")
 		AudioManager.play_sfx("type")
+		AudioManager.play_sfx("heavy_breath")
 		text.show()
 		await get_tree().create_timer(3.0).timeout
 		AudioManager.play_sfx("type")

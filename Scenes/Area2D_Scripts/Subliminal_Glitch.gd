@@ -43,4 +43,4 @@ func stop_glitch():
 		camera.offset = Vector2.ZERO
 	AudioManager.stop_bgm("vhs_static")
 	GlobalManager.hallway_trigger = 1
-	get_tree().change_scene_to_file("res://Scenes/Game/F001_01.tscn")
+	get_tree().change_scene_to_file("res://Scenes/ExtraScenes/Entity.tscn")

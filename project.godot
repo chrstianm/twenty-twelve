@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GAMEDEV_FINALS"
-run/main_scene="uid://c0nt664o2bj0m"
+run/main_scene="uid://c8ylyl4q2ye2q"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://dcoiis6w8k6rt"
 
@@ -20,9 +20,12 @@ config/icon="uid://dcoiis6w8k6rt"
 CursorManager="*res://CursorManager.gd"
 AudioManager="*res://Assets/Audio/AudioManager.tscn"
 GlobalManager="*res://global_manager.tscn"
+Inventory="*res://InventoryManager.gd"
+InventoryUi="*res://inventory_ui.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [rendering]

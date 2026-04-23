@@ -27,7 +27,7 @@ var archive_data = [
 		"image": "res://Assets/Pictures/Victim1.jpg"
 	},
 		{
-		"text": "Name: Philip\nAddress: █████████\nLast Found: CEIT Building\n\n - Confirmed victim have been\nfound suspended from the ceiling\nin the Lobby.\nThey are alive, but 'reconfigured.'\n" ,
+		"text": "Name: Colt\nAddress: █████████\nLast Found: CEIT Building\n\n - Confirmed victim have been\nfound suspended from the ceiling\nin the Lobby.\nThey are alive, but 'reconfigured.'\n" ,
 		"image": "res://Assets/Pictures/Victim1.jpg"
 	},
 		{
@@ -63,7 +63,7 @@ var archive_data = [
 		"image": "res://Assets/Pictures/Victim3(3).jpg"
 	},
 			{
-		"text": "\n                    Я тебя найду\n                             Я тебя найду\n      Я тебя найду\n                           Я тебя найду\n             Я тебя найду\n                          Я тебя найду",
+		"text": "\n\n\n\n\n i know where you are",
 		"image": "res://Assets/Pictures/Victim3(3).jpg"
 	},
 ]

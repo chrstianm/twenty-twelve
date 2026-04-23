@@ -1,29 +1,32 @@
 extends Control
-@onready var item_pickup: TextureRect = $ITEM_PICKUP
-@onready var redact: ColorRect = $REDACT
-@onready var pickup_text: Label = $TEXT
+
+@onready var text: Label = $Wallet
+@onready var redact: ColorRect = $redact
+@onready var area: Area2D = $Wallet2
 
 func _ready() -> void:
 	CursorManager.set_normal()
-	if GlobalManager.is_key_picked_up == true:
+	if GlobalManager.is_wallet_picked_up == true:
 		redact.show()
 
-func _on_key_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_wallet_2_mouse_entered() -> void:
+	CursorManager.set_hover()
+func _on_wallet_2_mouse_exited() -> void:
+	CursorManager.set_normal()
+func _on_wallet_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			if GlobalManager.is_key_picked_up == false:
+			if GlobalManager.is_wallet_picked_up == false:
+				area.hide()
 				AudioManager.play_sfx("click")
-				item_pickup.show()
-				pickup_text.show()
+				text.show()
 				await get_tree().create_timer(2.5).timeout
-				item_pickup.hide()
-				pickup_text.hide()
+				text.hide()
 				redact.show()
-				GlobalManager.is_key_picked_up = true
-				Inventory.add_item("rusty key")
+				GlobalManager.is_wallet_picked_up = true
+				Inventory.add_item("colt's wallet")
 			else:
 				pass
-			
 
 func _on_back_mouse_entered() -> void:
 	CursorManager.set_back()
@@ -33,4 +36,4 @@ func _on_back_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			AudioManager.play_sfx("click")
-			get_tree().change_scene_to_file("res://Scenes/Game/c_001_02.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Game/c_004_01.tscn")

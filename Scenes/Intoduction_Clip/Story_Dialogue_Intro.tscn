@@ -1,15 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://b57mc4q8khjnk"]
+[gd_scene load_steps=8 format=3 uid="uid://b57mc4q8khjnk"]
 
 [ext_resource type="Shader" uid="uid://fgvjrs21ucdq" path="res://Scenes/Intoduction_Clip/Shader/Archive-Shader.gdshader" id="1_di671"]
+[ext_resource type="Shader" uid="uid://cessl0n4cx8ps" path="res://Scenes/Intoduction_Clip/Shader/SubviewportContainer.gdshader" id="1_jtcny"]
 [ext_resource type="FontFile" uid="uid://bnnhj8xv7cg1" path="res://Assets/Font/VCR_OSD_MONO_1.001.ttf" id="2_jtcny"]
+[ext_resource type="Script" uid="uid://b28n0ceoamkyc" path="res://Scenes/Intoduction_Clip/Script/Story_Dialogue.gd" id="4_xf2u5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtnf1"]
+shader = ExtResource("1_jtcny")
+shader_parameter/shake_power = 0.005
+shader_parameter/shake_rate = 0.5
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 10.0
+shader_parameter/color_drift = 0.0005
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jtcny"]
 shader = ExtResource("1_di671")
 shader_parameter/blur_amount = 1.5
 
 [sub_resource type="LabelSettings" id="LabelSettings_wtnf1"]
+line_spacing = 7.5
 font = ExtResource("2_jtcny")
-font_size = 32
+font_size = 11
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,18 +30,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_jtcny")
+[node name="SubViewport" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_wtnf1")
 layout_mode = 0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewport"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/SubViewport"]
+material = SubResource("ShaderMaterial_jtcny")
 offset_right = 1153.0
 offset_bottom = 646.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Text" type="Label" parent="SubViewport/SubViewport"]
 z_index = -2
-layout_mode = 0
-offset_left = 552.0
-offset_top = 297.0
-offset_right = 592.0
-offset_bottom = 320.0
-text = "hi"
+offset_left = 96.99999
+offset_top = 160.99998
+offset_right = 323.0
+offset_bottom = 189.99998
+scale = Vector2(1.95, 1.95)
 label_settings = SubResource("LabelSettings_wtnf1")
+script = ExtResource("4_xf2u5")
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/SubViewport"]
+z_index = -2
+offset_left = 858.0
+offset_top = 307.0
+offset_right = 973.0
+offset_bottom = 408.0
