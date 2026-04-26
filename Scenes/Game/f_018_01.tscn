@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cf8eb3ffmuf48" path="res://Assets/Digicam/DSC06929.JPG" id="2_1am8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djjgn"]
-size = Vector2(164, 252)
+size = Vector2(96.5, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1am8a"]
-size = Vector2(482, 73)
+size = Vector2(482, 18.5)
 
 [node name="F018-01" type="Control"]
 layout_mode = 3
@@ -49,13 +49,13 @@ texture = ExtResource("2_1am8a")
 [node name="forward" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forward"]
-position = Vector2(569, 296)
+position = Vector2(541, 314)
 shape = SubResource("RectangleShape2D_djjgn")
 
 [node name="back" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="back"]
-position = Vector2(576, 506)
+position = Vector2(576, 533.25)
 shape = SubResource("RectangleShape2D_1am8a")
 debug_color = Color(0.6738284, 0.3067834, 1, 0.41960785)
 

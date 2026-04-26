@@ -36,7 +36,7 @@ func _ready():
 	
 	# Setup the loop timer
 	add_child(timer)
-	timer.wait_time = 10.0
+	timer.wait_time = 3.0
 	timer.timeout.connect(display_next_entry)
 	
 	# Show the first entry immediately on start
@@ -58,7 +58,7 @@ func display_next_entry():
 			entity_display.texture = null
 		
 		AudioManager.play_sfx("type")
-		await get_tree().create_timer(9.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		text = ""
 		current_index += 1
 	else:

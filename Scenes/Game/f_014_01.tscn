@@ -7,7 +7,7 @@
 size = Vector2(145, 233)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1r72y"]
-size = Vector2(485.00003, 41)
+size = Vector2(485.00003, 25)
 
 [node name="F014-01" type="Control"]
 layout_mode = 3
@@ -49,13 +49,13 @@ texture = ExtResource("2_1r72y")
 [node name="forward" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forward"]
-position = Vector2(493, 290)
+position = Vector2(475, 185)
 shape = SubResource("RectangleShape2D_0vcx7")
 
 [node name="back" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="back"]
-position = Vector2(577.5, 523.5)
+position = Vector2(577.5, 531.5)
 shape = SubResource("RectangleShape2D_1r72y")
 debug_color = Color(0.6745098, 0.32941177, 0.9647059, 0.41960785)
 

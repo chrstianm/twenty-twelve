@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://tftqelndmfph" path="res://Assets/Digicam/DSC06849.JPG" id="2_vwkep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mypc5"]
-size = Vector2(242, 184)
+size = Vector2(269, 72.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f30jf"]
 size = Vector2(365.5, 40.5)
@@ -49,7 +49,7 @@ texture = ExtResource("2_vwkep")
 [node name="Forward" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Forward"]
-position = Vector2(415, 242)
+position = Vector2(435.5, 293.25)
 shape = SubResource("RectangleShape2D_mypc5")
 
 [node name="Back" type="Area2D" parent="."]

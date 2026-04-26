@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://c48xryudv52yw"]
+[gd_scene load_steps=8 format=3 uid="uid://c48xryudv52yw"]
 
 [ext_resource type="Script" uid="uid://bp5iy1lpxnpwu" path="res://Scenes/Scripts/f_022_01.gd" id="1_yc0c0"]
 [ext_resource type="Texture2D" uid="uid://cptlsrjsm07mw" path="res://Assets/Digicam/DSC06934.JPG" id="2_1lonn"]
+[ext_resource type="FontFile" uid="uid://bnnhj8xv7cg1" path="res://Assets/Font/VCR_OSD_MONO_1.001.ttf" id="3_1lonn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfb8b"]
-size = Vector2(166, 232)
+size = Vector2(58, 52.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8ita"]
 size = Vector2(492, 57)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfb8b"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j8ita"]
+font = ExtResource("3_1lonn")
+font_size = 11
 
 [node name="F022-01" type="Control"]
 layout_mode = 3
@@ -49,7 +57,7 @@ texture = ExtResource("2_1lonn")
 [node name="forward" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forward"]
-position = Vector2(802, 295)
+position = Vector2(716, 323)
 shape = SubResource("RectangleShape2D_vfb8b")
 
 [node name="back" type="Area2D" parent="."]
@@ -58,6 +66,29 @@ shape = SubResource("RectangleShape2D_vfb8b")
 position = Vector2(573, 518)
 shape = SubResource("RectangleShape2D_j8ita")
 debug_color = Color(0.6788411, 0.30118644, 1, 0.41960785)
+
+[node name="redact" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 658.0
+offset_top = 281.0
+offset_right = 782.0
+offset_bottom = 377.0
+color = Color(0, 0, 0, 1)
+
+[node name="text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 465.0
+offset_top = 301.0
+offset_right = 646.1321
+offset_bottom = 324.0
+scale = Vector2(1.59, 1.59)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfb8b")
+text = "you found a picture piece"
+label_settings = SubResource("LabelSettings_j8ita")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="input_event" from="forward" to="." method="_on_forward_input_event"]
 [connection signal="mouse_entered" from="forward" to="." method="_on_forward_mouse_entered"]

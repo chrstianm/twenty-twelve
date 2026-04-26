@@ -23,7 +23,8 @@ var sfx_sounds = {
 	"hey": preload("res://Assets/Audio/hey.MP3"),
 	"rattle": preload("res://Assets/Audio/rattle_jumpscare.MP3"),
 	"static_for_intro": preload("res://Assets/Audio/static_for_intro.mp3"),
-	"heavy_breath": preload("res://Assets/Audio/heavy_breaths(1).MP3")
+	"heavy_breath": preload("res://Assets/Audio/heavy_breaths(1).MP3"),
+	"door_knock": preload("res://Assets/Audio/door_knock.mp3")
 }
 
 func play_bgm(track_name: String) -> void:

@@ -7,10 +7,10 @@
 size = Vector2(115.75, 155.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnn4"]
-size = Vector2(530, 38)
+size = Vector2(530, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aefhq"]
-size = Vector2(129, 183)
+size = Vector2(91.5, 186.5)
 
 [node name="F020-01" type="Control"]
 layout_mode = 3
@@ -52,20 +52,20 @@ texture = ExtResource("2_aefhq")
 [node name="forward" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forward"]
-position = Vector2(818, 280)
+position = Vector2(820, 294)
 shape = SubResource("RectangleShape2D_7jcu3")
 
 [node name="back" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="back"]
-position = Vector2(579, 526)
+position = Vector2(579, 533.5)
 shape = SubResource("RectangleShape2D_gwnn4")
 debug_color = Color(0.67601216, 0.3041773, 1, 0.41960785)
 
 [node name="windows" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="windows"]
-position = Vector2(377, 328)
+position = Vector2(352, 315)
 shape = SubResource("RectangleShape2D_aefhq")
 
 [connection signal="input_event" from="forward" to="." method="_on_forward_input_event"]
