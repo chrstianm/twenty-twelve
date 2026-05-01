@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phrvd"]
 size = Vector2(314.5, 36)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vua3b"]
-radius = 77.10383
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dswg"]
+size = Vector2(81.25, 47)
 
 [node name="c_004_06" type="Control"]
 layout_mode = 3
@@ -57,8 +57,8 @@ debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
 [node name="ID" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ID"]
-position = Vector2(520, 244)
-shape = SubResource("CircleShape2D_vua3b")
+position = Vector2(529.375, 242)
+shape = SubResource("RectangleShape2D_2dswg")
 
 [connection signal="input_event" from="BACK" to="." method="_on_back_input_event"]
 [connection signal="mouse_entered" from="BACK" to="." method="_on_back_mouse_entered"]

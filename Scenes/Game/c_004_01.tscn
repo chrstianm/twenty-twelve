@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cgxegd5gthvf1" path="res://Assets/Digicam/DSC06867.JPG" id="1_uqg3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4lpj"]
-size = Vector2(144.125, 214.25)
+size = Vector2(132, 131.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75k8x"]
-size = Vector2(314.5, 36)
+size = Vector2(314.5, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnxmx"]
-size = Vector2(173, 151.5)
+size = Vector2(162.75, 113.75)
 
 [node name="C004-01" type="Control"]
 layout_mode = 3
@@ -52,20 +52,20 @@ texture = ExtResource("1_uqg3l")
 [node name="Forward" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Forward"]
-position = Vector2(459.0625, 199)
+position = Vector2(478, 200)
 shape = SubResource("RectangleShape2D_h4lpj")
 
 [node name="BACK" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BACK"]
-position = Vector2(599, 524)
+position = Vector2(599, 530)
 shape = SubResource("RectangleShape2D_75k8x")
 debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
 
 [node name="Wallet" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wallet"]
-position = Vector2(791, 381)
+position = Vector2(775, 397)
 shape = SubResource("RectangleShape2D_mnxmx")
 
 [connection signal="input_event" from="Forward" to="." method="_on_forward_input_event"]

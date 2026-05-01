@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://ybrsmvxdynwt"]
+[gd_scene load_steps=7 format=3 uid="uid://ybrsmvxdynwt"]
 
 [ext_resource type="Script" uid="uid://djluaabriuaon" path="res://Scenes/Scripts/c_004_07.gd" id="1_hik7y"]
 [ext_resource type="Texture2D" uid="uid://wfqwvpctgaus" path="res://Assets/Digicam/DSC06874.JPG" id="2_ne8fr"]
+[ext_resource type="LabelSettings" uid="uid://ijr2ruqji7tl" path="res://label_popup_settings.tres" id="3_ne8fr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hik7y"]
 size = Vector2(314.5, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ne8fr"]
-radius = 105.076164
+radius = 78.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myyta"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="c_004_07" type="Control"]
 layout_mode = 3
@@ -56,8 +60,31 @@ debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
 [node name="ID2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ID2"]
-position = Vector2(520, 244)
+position = Vector2(555, 290)
 shape = SubResource("CircleShape2D_ne8fr")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 216.0
+offset_right = 594.0
+offset_bottom = 363.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 600.0
+offset_top = 385.0
+offset_right = 739.6825
+offset_bottom = 405.10583
+scale = Vector2(1.89, 1.89)
+theme_override_styles/normal = SubResource("StyleBoxFlat_myyta")
+text = "you found an evidence"
+label_settings = ExtResource("3_ne8fr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="input_event" from="BACK" to="." method="_on_back_input_event"]
 [connection signal="mouse_entered" from="BACK" to="." method="_on_back_mouse_entered"]

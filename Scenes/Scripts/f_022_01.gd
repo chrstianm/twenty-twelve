@@ -9,9 +9,9 @@ func _ready() -> void:
 		redact.show()
 	
 func _on_forward_mouse_entered() -> void:
-	CursorManager.set_hover()
+	pass
 func _on_forward_mouse_exited() -> void:
-	CursorManager.set_normal()
+	pass
 func _on_forward_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 			if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

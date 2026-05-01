@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dpitvdjqpjriq" path="res://Assets/Digicam/DSC06860.JPG" id="2_20dbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h77sm"]
-size = Vector2(195, 166)
+size = Vector2(146.5, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5dfgv"]
 size = Vector2(314.5, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20dbi"]
-size = Vector2(137.5, 289)
+size = Vector2(93.5, 237)
 
 [node name="C001-01" type="Control"]
 layout_mode = 3
@@ -52,7 +52,7 @@ texture = ExtResource("2_20dbi")
 [node name="ToCr" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToCr"]
-position = Vector2(422, 233)
+position = Vector2(441, 218)
 shape = SubResource("RectangleShape2D_h77sm")
 
 [node name="BACK" type="Area2D" parent="."]
@@ -65,7 +65,7 @@ debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
 [node name="ToWood" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToWood"]
-position = Vector2(811.75, 260.5)
+position = Vector2(834, 310)
 shape = SubResource("RectangleShape2D_20dbi")
 
 [connection signal="input_event" from="ToCr" to="." method="_on_to_cr_input_event"]

@@ -9,7 +9,8 @@ var music_tracks = {
 	"glitch": preload("res://Assets/Audio/glitch_static(1).MP3"),
 	"outside": preload("res://Assets/Audio/OutsideBGM.MP3"),
 	"vhs_static": preload("res://Assets/Audio/vhs_static.mp3"),
-	"ambiance_extreme": preload("res://Assets/Audio/ambiance_extreme(1).MP3")
+	"ambiance_extreme": preload("res://Assets/Audio/ambiance_extreme(1).MP3"),
+	"waltz": preload("res://Assets/Audio/Audio_Intro/intro_bgm(2).MP3")
 }
 
 var sfx_sounds = {

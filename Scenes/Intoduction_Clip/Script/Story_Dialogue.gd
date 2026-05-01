@@ -1,72 +1,132 @@
-extends Label
+extends Control
 
-# Reference to the TextureRect node
-@onready var entity_display = $"../TextureRect"
-@onready var sub_viewport_container: SubViewportContainer = $"../.."
+@onready var dialogue_label = $"."
+@onready var portrait_sprite = $"../TextureRect"
+@onready var audio_player = $"../AudioStreamPlayer"
+@onready var button_container = $"../HBoxContainer"
 
-# The Library: Text and optional image path
-var archive_data = [
+# The dialogue data structure
+var dialogue_data = [
 	{
-		"text": "wear earphones for best experience.",
-		"image": "res://Assets/Pictures/Victim3_3_-removebg-preview.png"
+		"text": "Hello there, _____.You look... confused. That’s normal. I will be here to help you.",
+		"image": preload("res://Assets/Pictures/man_wave.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_1.wav"),
+		"buttons": null
 	},
 	{
-		"text": "DATA RECOVERY: [CASE_FILE_99-B]\nSubject: Colt Ga████n (Missing since 04/07/2012)\n\nEntry No. 012-23\n\nThe library lights flickered at 7:00 PM, but they never came back on. \nI tried the main lobby doors, but the handles won't even budge. \nIt’s like they’re part of the wall now.",
-		"image": null 
-	},
-	{
-		"text": "DATA RECOVERY: [CASE_FILE_104-A]\nSubject: Unknown (Recovered Journal)\n\nEntry No. 088-04: \n\nThe stairs don't go down anymore. \nI went down three flights and ended up on the roof. \nI looked out, but there’s no one outside. \nJust a black void where the horizon should be. \n\n7:13 PM. It’s always 7:13 PM.",
-		"image": null 
+		"text": "Do you know where you are?",
+		"image": preload("res://Assets/Pictures/man_smiling.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_2.wav"),
+		"buttons": ["     No",]
 	},
 		{
-		"text": "DATA RECOVERY: [CASE_FILE_104-A]\nSubject: Unknown (Recovered Journal)\n\nEntry No. 088-04:\n████████h ████████\n████████████████████ e████████████████████████████████████\n████████l ███████████████████ p ████████\n████████████████████us████████████████████████████████████████████████\n████████████████████████████████████████████████\n",
-		"image": "res://Assets/Pictures/Victim3_3_-removebg-preview.png"
+		"text": "I see.  Can you tell me if you remember anything?",
+		"image": preload("res://Assets/Pictures/man_smiling.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_3.wav"),
+		"buttons": ["     Yes     ", "     No     "]
 	},
+		{
+		"text": "Ah. I see. You remember just enough to be dangerous to your own peace of mind",
+		"image": preload("res://Assets/Pictures/man_wave.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_4.wav"),
+		"buttons": null
+	},
+		{
+		"text": "That’s a start, I suppose, but don’t let those flickering images trouble you.",
+		"image": preload("res://Assets/Pictures/man_wave.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_5.wav"),
+		"buttons": null
+	},
+		{
+		"text": "Memories are often just the mind's way of playing tricks when it's tired.",
+		"image": preload("res://Assets/Pictures/man_smiling.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_6.wav"),
+		"buttons": null
+	},
+		{
+		"text": "You’re looking at the exit again. Why?",
+		"image": preload("res://Assets/Pictures/man_serious.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_7.MP3"),
+		"buttons": ["Where am I?",]
+	},
+		{
+		"text": "You’re wondering what’s beyond that gate, aren’t you? I can tell you now: \n\nit’s just more of the same noise, the same cold,the same exhausting world. ",
+		"image": preload("res://Assets/Pictures/man_smiling.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_8.wav"),
+		"buttons": null
+	},
+		{
+		"text": "Why would you want to go back to a place that you don’t even remember?",
+		"image": preload("res://Assets/Pictures/man_smiling.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_9.wav"),
+		"buttons": ["where am i"]
+	},
+		{
+		"text": "STAY HERE,,,,,,,,,,,, STAY WITH ME. you wont escape, i will not let you escape",
+		"image": preload("res://Assets/Pictures/man_creepy.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_10.wav"),
+		"buttons": null
+	}
 ]
 
-var current_index = 0
-@onready var timer = Timer.new()
+var current_step = 0
 
 func _ready():
+	AudioManager.stop_all_bgm()
+	AudioManager.play_bgm("waltz")
 	await get_tree().create_timer(2.5).timeout
-	# Start with a clean slate
-	text = ""
-	visible_ratio = 1.0 # Ensure text is always fully visible
-	entity_display.texture = null
-	
-	# Setup the loop timer
-	add_child(timer)
-	timer.wait_time = 3.0
-	timer.timeout.connect(display_next_entry)
-	
-	# Show the first entry immediately on start
-	display_next_entry()
-	timer.start()
+	play_next_step()
 
-func display_next_entry():
-	# 1. Peek at the data for the current index
-	if current_index < archive_data.size():
-		var data = archive_data[current_index]
-		
-		text = data["text"]
-		# --- IMAGE LOGIC (Instant) ---
-		if data["image"] != null:
-			entity_display.texture = load(data["image"])
-			entity_display.modulate.a = 1.0
-		else:
-			# If the data has NO image, clear the display
-			entity_display.texture = null
-		
-		AudioManager.play_sfx("type")
-		await get_tree().create_timer(2.0).timeout
-		text = ""
-		current_index += 1
-	else:
-		# Reset the index to loop the archive from the start
-		current_index = 0 
-		display_next_entry()
+func play_next_step():
+	if current_step >= dialogue_data.size():
+		return
+
+	var data = dialogue_data[current_step]
+
+	# 1. Update UI Elements
+	dialogue_label.text = data["text"]
+	portrait_sprite.texture = data["image"]
 	
-	if current_index == 3:
-		AudioManager.play_sfx("static_for_intro")
-		await get_tree().create_timer(6.5).timeout
-		get_tree().change_scene_to_file("res://Scenes/Intoduction_Clip/Archive.tscn")
+	# 2. Clear old buttons from the previous line
+	for child in button_container.get_children():
+		child.queue_free()
+
+	# 3. Play Audio and wait for it to finish
+	if data["audio"]:
+		audio_player.stream = data["audio"]
+		audio_player.play()
+		
+		# THE KEY: Wait until the audio file ends
+		await audio_player.finished
+	
+	# 4. Wait the additional 2 second buffer
+	await get_tree().create_timer(1.0).timeout
+
+	# 5. Show Buttons after the audio and buffer are done
+	if data["buttons"] == null or data["buttons"].is_empty():
+		# No buttons provided? Move to next line automatically
+		current_step += 1
+		play_next_step()
+	else:
+		# Buttons exist? Wait for player input
+		create_buttons(data["buttons"])
+		
+	if current_step == 10:
+		AudioManager.stop_all_bgm()
+		AudioManager.play_sfx("heavy_breath")
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://Scenes/Intoduction_Clip/title.tscn")
+		
+func create_buttons(button_texts: Array):
+	for text in button_texts:
+		var btn = Button.new()
+		btn.text = text
+		btn.pressed.connect(_on_button_pressed.bind(text))
+		button_container.add_child(btn)
+
+func _on_button_pressed(choice_text: String):
+	print("Player chose: ", choice_text)
+	AudioManager.play_sfx("click")
+	current_step += 1
+	await get_tree().create_timer(0.5).timeout
+	play_next_step()

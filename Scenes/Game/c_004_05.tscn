@@ -7,7 +7,7 @@
 size = Vector2(314.5, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6b7o"]
-size = Vector2(162.0625, 227.125)
+size = Vector2(110.015625, 160.28125)
 
 [node name="c_004_05" type="Control"]
 layout_mode = 3
@@ -56,7 +56,7 @@ debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
 [node name="Toilet" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toilet"]
-position = Vector2(712, 316)
+position = Vector2(724, 339)
 shape = SubResource("RectangleShape2D_g6b7o")
 
 [connection signal="input_event" from="BACK" to="." method="_on_back_input_event"]

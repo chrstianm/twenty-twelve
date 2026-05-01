@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://blhn3hptb5g7u" path="res://Scenes/Scripts/c_001_02.gd" id="1_o3xqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74hfj"]
-size = Vector2(227.75, 154)
+size = Vector2(135.375, 150.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3xqp"]
 size = Vector2(314.5, 36)
@@ -49,7 +49,7 @@ texture = ExtResource("1_74hfj")
 [node name="ToWood" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToWood"]
-position = Vector2(741.875, 348)
+position = Vector2(796.6875, 356.25)
 shape = SubResource("RectangleShape2D_74hfj")
 
 [node name="BACK" type="Area2D" parent="."]

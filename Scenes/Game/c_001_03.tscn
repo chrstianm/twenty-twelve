@@ -11,10 +11,10 @@ bg_color = Color(0, 0, 0, 1)
 font_size = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi4da"]
-size = Vector2(80, 89.5)
+size = Vector2(68, 89)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf2rv"]
-size = Vector2(314.5, 36)
+size = Vector2(314.5, 28)
 
 [node name="C001-03" type="Control"]
 layout_mode = 3
@@ -90,13 +90,13 @@ vertical_alignment = 1
 [node name="Key" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
-position = Vector2(578, 367.75)
+position = Vector2(578, 368)
 shape = SubResource("RectangleShape2D_qi4da")
 
 [node name="BACK" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BACK"]
-position = Vector2(599, 524)
+position = Vector2(599, 528)
 shape = SubResource("RectangleShape2D_qf2rv")
 debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
 
