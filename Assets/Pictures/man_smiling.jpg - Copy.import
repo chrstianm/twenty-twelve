@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcqqaueakfh8l"
-path="res://.godot/imported/DSC06875.JPG-93884fd4cbd46b4418b7dc78804ad0ba.ctex"
+uid="uid://d3h8n5o5lvrh8"
+path="res://.godot/imported/man_smiling.jpg-94e4c809c1deb483598a9917870b3855.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Digicam/DSC06875.JPG"
-dest_files=["res://.godot/imported/DSC06875.JPG-93884fd4cbd46b4418b7dc78804ad0ba.ctex"]
+source_file="res://Assets/Pictures/man_smiling.jpg"
+dest_files=["res://.godot/imported/man_smiling.jpg-94e4c809c1deb483598a9917870b3855.ctex"]
 
 [params]
 

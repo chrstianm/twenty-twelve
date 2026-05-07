@@ -7,8 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hik7y"]
 size = Vector2(314.5, 36)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ne8fr"]
-radius = 78.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ne8fr"]
+radius = 50.494568
+height = 172.75406
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myyta"]
 bg_color = Color(0, 0, 0, 1)
@@ -60,15 +61,16 @@ debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
 [node name="ID2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ID2"]
-position = Vector2(555, 290)
-shape = SubResource("CircleShape2D_ne8fr")
+position = Vector2(556, 290)
+rotation = 0.25830874
+shape = SubResource("CapsuleShape2D_ne8fr")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 507.0
-offset_top = 216.0
-offset_right = 594.0
-offset_bottom = 363.0
+offset_left = 512.0
+offset_top = 218.0
+offset_right = 599.0
+offset_bottom = 365.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 

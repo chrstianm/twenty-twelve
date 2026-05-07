@@ -1,7 +1,19 @@
 extends Control
+
+@onready var jumpscare: TextureRect = $jumpscare
+
 func _ready() -> void:
 	CursorManager.set_normal()
+	
+	if GlobalManager.is_picture_picked_up == true:
+		trigger_jumpscare()
 
+func trigger_jumpscare() -> void:
+	jumpscare.visible = true
+	await get_tree().create_timer(1.0).timeout
+	jumpscare.visible = false
+	GlobalManager.is_picture_picked_up = false
+	
 func _on_forward_mouse_entered() -> void:
 	CursorManager.set_hover()
 func _on_forward_mouse_exited() -> void:

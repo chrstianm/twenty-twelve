@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcqqaueakfh8l"
-path="res://.godot/imported/DSC06875.JPG-93884fd4cbd46b4418b7dc78804ad0ba.ctex"
+uid="uid://cgjwaetvmo6jb"
+path="res://.godot/imported/silhouette_f_022_01.png-6572e934be1ad1b2f41bf6d7d3ec265a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Digicam/DSC06875.JPG"
-dest_files=["res://.godot/imported/DSC06875.JPG-93884fd4cbd46b4418b7dc78804ad0ba.ctex"]
+source_file="res://Assets/Pictures/silhouette_f_022_01.png"
+dest_files=["res://.godot/imported/silhouette_f_022_01.png-6572e934be1ad1b2f41bf6d7d3ec265a.ctex"]
 
 [params]
 

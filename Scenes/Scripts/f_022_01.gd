@@ -2,11 +2,15 @@ extends Control
 
 @onready var redact: ColorRect = $redact
 @onready var text: Label = $text
+@onready var entity: TextureRect = $entity
 
 func _ready() -> void:
 	CursorManager.set_normal()
 	if GlobalManager.is_picture_picked_up == true:
 		redact.show()
+	if GlobalManager.has_picture_been_collected == true:
+		redact.show()
+		entity.hide()
 	
 func _on_forward_mouse_entered() -> void:
 	pass
@@ -18,12 +22,14 @@ func _on_forward_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				if GlobalManager.is_picture_picked_up == false:
 					AudioManager.play_sfx("click")
 					Inventory.add_item("???? picture")
-					AudioManager.play_sfx("door_knock")
 					text.show()
 					await get_tree().create_timer(2.5).timeout 
 					text.hide()
 					redact.show()
+					entity.hide()
+					AudioManager.play_sfx("door_knock")
 					GlobalManager.is_picture_picked_up = true
+					GlobalManager.has_picture_been_collected = true
 			else:
 				pass
 

@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ikol4outcyb"]
+[gd_scene load_steps=8 format=3 uid="uid://ikol4outcyb"]
 
-[ext_resource type="Texture2D" uid="uid://c7lijnwqcgq6n" path="res://Assets/Digicam/DSC06875.JPG" id="1_w28me"]
+[ext_resource type="Script" uid="uid://cuvipekox704x" path="res://Scenes/Scripts/c_005_01.gd" id="1_3jpmk"]
+[ext_resource type="Texture2D" uid="uid://bcqqaueakfh8l" path="res://Assets/Digicam/DSC06875.JPG" id="1_w28me"]
+[ext_resource type="FontFile" uid="uid://bnnhj8xv7cg1" path="res://Assets/Font/VCR_OSD_MONO_1.001.ttf" id="3_lmcay"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3jpmk"]
+radius = 15.0
+height = 50.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w28me"]
 size = Vector2(314.5, 36)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0oiej"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xmweh"]
+font = ExtResource("3_lmcay")
+font_size = 11
 
 [node name="c_005_01" type="Control"]
 layout_mode = 3
@@ -13,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_3jpmk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -41,9 +55,46 @@ scale = Vector2(0.14, 0.14)
 mouse_filter = 2
 texture = ExtResource("1_w28me")
 
+[node name="Entity" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entity"]
+position = Vector2(599, 248)
+shape = SubResource("CapsuleShape2D_3jpmk")
+
 [node name="BACK" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BACK"]
 position = Vector2(599, 524)
 shape = SubResource("RectangleShape2D_w28me")
 debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
+
+[node name="redact" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 576.0
+offset_top = 190.0
+offset_right = 619.0
+offset_bottom = 294.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 568.0
+offset_top = 354.0
+offset_right = 760.4528
+offset_bottom = 374.7547
+scale = Vector2(1.59, 1.59)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0oiej")
+text = "maybe i'm just hallucinating"
+label_settings = SubResource("LabelSettings_xmweh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="input_event" from="Entity" to="." method="_on_entity_input_event"]
+[connection signal="mouse_entered" from="Entity" to="." method="_on_entity_mouse_entered"]
+[connection signal="mouse_exited" from="Entity" to="." method="_on_entity_mouse_exited"]
+[connection signal="input_event" from="BACK" to="." method="_on_back_input_event"]
+[connection signal="mouse_entered" from="BACK" to="." method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="BACK" to="." method="_on_back_mouse_exited"]
