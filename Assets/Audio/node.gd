@@ -10,7 +10,8 @@ var music_tracks = {
 	"outside": preload("res://Assets/Audio/OutsideBGM.MP3"),
 	"vhs_static": preload("res://Assets/Audio/vhs_static.mp3"),
 	"ambiance_extreme": preload("res://Assets/Audio/ambiance_extreme(1).MP3"),
-	"waltz": preload("res://Assets/Audio/Audio_Intro/intro_bgm(2).MP3")
+	"waltz": preload("res://Assets/Audio/Audio_Intro/intro_bgm(2).MP3"),
+	"bsod": preload("res://Assets/Audio/Audio_Intro/bsod_sfx.mp3")
 }
 
 var sfx_sounds = {
@@ -25,7 +26,9 @@ var sfx_sounds = {
 	"rattle": preload("res://Assets/Audio/rattle_jumpscare.MP3"),
 	"static_for_intro": preload("res://Assets/Audio/static_for_intro.mp3"),
 	"heavy_breath": preload("res://Assets/Audio/heavy_breaths(1).MP3"),
-	"door_knock": preload("res://Assets/Audio/door_knock.mp3")
+	"door_knock": preload("res://Assets/Audio/door_knock.mp3"),
+	"bsod": preload("res://Assets/Audio/Audio_Intro/bsod_sfx.mp3")
+
 }
 
 func play_bgm(track_name: String) -> void:

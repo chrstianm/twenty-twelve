@@ -10,14 +10,14 @@ var dialogue_data = [
 	{
 		"text": "Hello there, _____.You look... confused. That’s normal. I will be here to help you.",
 		"image": preload("res://Assets/Pictures/man_wave.jpg"),
-		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_1.wav"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_1.MP3"),
 		"buttons": null
 	},
 	{
 		"text": "Do you know where you are?",
 		"image": preload("res://Assets/Pictures/man_smiling.jpg"),
 		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_2.wav"),
-		"buttons": ["     No",]
+		"buttons": ["     No     ",]
 	},
 		{
 		"text": "I see.  Can you tell me if you remember anything?",
@@ -47,7 +47,7 @@ var dialogue_data = [
 		"text": "You’re looking at the exit again. Why?",
 		"image": preload("res://Assets/Pictures/man_serious.jpg"),
 		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_7.MP3"),
-		"buttons": ["Where am I?",]
+		"buttons": ["  Where am I?  ",]
 	},
 		{
 		"text": "You’re wondering what’s beyond that gate, aren’t you? I can tell you now: \n\nit’s just more of the same noise, the same cold,the same exhausting world. ",
@@ -59,12 +59,12 @@ var dialogue_data = [
 		"text": "Why would you want to go back to a place that you don’t even remember?",
 		"image": preload("res://Assets/Pictures/man_smiling.jpg"),
 		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_9.wav"),
-		"buttons": ["where am i"]
+		"buttons": ["  i want to go home  "]
 	},
 		{
-		"text": "STAY HERE,,,,,,,,,,,, STAY WITH ME. you wont escape, i will not let you escape",
-		"image": preload("res://Assets/Pictures/man_creepy.jpg"),
-		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_10.wav"),
+		"text": "your not go   ing anywh ere, your st aying with me, do  nt you enjoy th is",
+		"image": preload("res://Assets/Pictures/base2.jpg"),
+		"audio": preload("res://Assets/Audio/Audio_Intro/intro_line_12.MP3"),
 		"buttons": null
 	}
 ]

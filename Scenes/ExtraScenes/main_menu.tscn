@@ -1,17 +1,19 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8ylyl4q2ye2q"]
 
 [ext_resource type="Script" uid="uid://df0rtivaniia5" path="res://Scenes/ExtraScenes/Script/main_menu.gd" id="1_7na8m"]
-[ext_resource type="Shader" uid="uid://cessl0n4cx8ps" path="res://Scenes/Intoduction_Clip/Shader/SubviewportContainer.gdshader" id="2_f0jv7"]
+[ext_resource type="Shader" uid="uid://v7anflp3w6uj" path="res://Scenes/Intoduction_Clip/Shader/warp.gdshader" id="2_826nt"]
 [ext_resource type="FontFile" uid="uid://bnnhj8xv7cg1" path="res://Assets/Font/VCR_OSD_MONO_1.001.ttf" id="3_j8i6c"]
 [ext_resource type="Shader" uid="uid://fgvjrs21ucdq" path="res://Scenes/Intoduction_Clip/Shader/Archive-Shader.gdshader" id="4_826nt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j8i6c"]
-shader = ExtResource("2_f0jv7")
+shader = ExtResource("2_826nt")
 shader_parameter/shake_power = 0.005
 shader_parameter/shake_rate = 0.5
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 10.0
 shader_parameter/color_drift = 0.0005
+shader_parameter/curve_x = 0.1
+shader_parameter/curve_y = 0.1
 
 [sub_resource type="LabelSettings" id="LabelSettings_826nt"]
 font = ExtResource("3_j8i6c")
@@ -60,9 +62,9 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="SubViewport/SubViewport"]
 offset_left = 540.0
-offset_top = 340.0
+offset_top = 358.0
 offset_right = 581.0
-offset_bottom = 358.0
+offset_bottom = 376.0
 scale = Vector2(2.765, 2.765)
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_j8i6c")
@@ -71,15 +73,15 @@ text = "start"
 flat = true
 
 [node name="Button2" type="Button" parent="SubViewport/SubViewport"]
-offset_left = 505.0
-offset_top = 424.0
-offset_right = 572.0
-offset_bottom = 442.0
+offset_left = 495.0
+offset_top = 440.0
+offset_right = 568.0
+offset_bottom = 458.0
 scale = Vector2(2.765, 2.765)
 focus_mode = 0
 theme_override_fonts/font = ExtResource("3_j8i6c")
 theme_override_font_sizes/font_size = 11
-text = "exit game"
+text = "eject game"
 flat = true
 
 [connection signal="pressed" from="SubViewport/SubViewport/Button" to="." method="_on_button_pressed"]

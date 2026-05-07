@@ -8,3 +8,4 @@ var is_wallet_picked_up = false
 var is_picture_picked_up = false
 var is_bottle_picked_up = false
 var is_id_picked_up = false
+var is_load_game = false

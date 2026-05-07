@@ -8,8 +8,8 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	AudioManager.play_sfx("click")
-#	await get_tree().create_timer(0.3).timeout
-	get_tree().change_scene_to_file("res://Scenes/Intoduction_Clip/Story_Dialogue_Intro.tscn")
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://Scenes/Intoduction_Clip/game_select.tscn")
 
 func _on_button_2_pressed() -> void:
 	AudioManager.play_sfx("click")
