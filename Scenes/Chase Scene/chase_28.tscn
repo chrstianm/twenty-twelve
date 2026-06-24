@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5rkj7rciy8ia"]
+[gd_scene load_steps=5 format=3 uid="uid://b5rkj7rciy8ia"]
 
 [ext_resource type="Script" uid="uid://ba5wy6g61mnxa" path="res://Scenes/Chase Scene/chase_28.gd" id="1_3gjtq"]
 [ext_resource type="Texture2D" uid="uid://b307lwnb3sjp1" path="res://Assets/Digicam/DSC07011.JPG" id="1_g30xb"]
+[ext_resource type="Script" uid="uid://bevkhs0t0cfm0" path="res://Scenes/Chase Scene/Script/glitch.gd" id="3_hfb4d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0oqll"]
 radius = 121.0661
@@ -48,5 +49,23 @@ texture = ExtResource("1_g30xb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Forward"]
 position = Vector2(567, 320)
 shape = SubResource("CircleShape2D_0oqll")
+
+[node name="GlitchLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="GlitchLayer" node_paths=PackedStringArray("camera")]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("3_hfb4d")
+camera = NodePath("../Camera2D")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="GlitchLayer"]
+position = Vector2(576, 324)
 
 [connection signal="input_event" from="Forward" to="." method="_on_forward_input_event"]

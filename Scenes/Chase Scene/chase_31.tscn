@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://kyc2knsb6v28"]
+[gd_scene load_steps=7 format=3 uid="uid://kyc2knsb6v28"]
 
 [ext_resource type="Texture2D" uid="uid://bnd1fu23a0y4w" path="res://Assets/Digicam/DSC07018.JPG" id="1_jjv7f"]
 [ext_resource type="Script" uid="uid://dmorq0n81fl2b" path="res://Scenes/Chase Scene/chase_31.gd" id="1_jv6ic"]
 [ext_resource type="LabelSettings" uid="uid://ijr2ruqji7tl" path="res://label_popup_settings.tres" id="3_lvx6i"]
+[ext_resource type="Script" uid="uid://bevkhs0t0cfm0" path="res://Scenes/Chase Scene/Script/glitch.gd" id="4_lvx6i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0oqll"]
 radius = 121.0661
@@ -66,5 +67,23 @@ text = "akala mo makakaalis ka?"
 label_settings = ExtResource("3_lvx6i")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GlitchLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="GlitchLayer" node_paths=PackedStringArray("camera")]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_lvx6i")
+camera = NodePath("../Camera2D")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="GlitchLayer"]
+position = Vector2(576, 324)
 
 [connection signal="input_event" from="Forward" to="." method="_on_forward_input_event"]

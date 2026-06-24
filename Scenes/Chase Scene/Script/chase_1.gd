@@ -1,8 +1,10 @@
 extends Control
 
+@onready var glitchy_overlay = $GlitchLayer/ColorRect2
 @onready var text: Label = $Label
 func _ready() -> void:
 	InventoryUi.hide()
+	glitchy_overlay.start_dynamic_glitch()
 	AudioManager.play_bgm("runrabbit")
 	CursorManager.set_normal()
 	text.show()

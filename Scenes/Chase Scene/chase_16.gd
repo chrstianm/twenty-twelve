@@ -1,6 +1,8 @@
 extends Control
 
+@onready var glitchy_overlay = $GlitchLayer/ColorRect2
 func _ready() -> void:
+	glitchy_overlay.start_dynamic_glitch()
 	CursorManager.set_normal()
 
 func _on_forward_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

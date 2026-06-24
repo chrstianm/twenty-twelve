@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://brk7fktfkqnue"]
+[gd_scene load_steps=6 format=3 uid="uid://brk7fktfkqnue"]
 
 [ext_resource type="Script" uid="uid://bivg50qwhr0k" path="res://Scenes/Chase Scene/Script/chase_1.gd" id="1_kt8y2"]
 [ext_resource type="Texture2D" uid="uid://dsmem3qd14u0x" path="res://Assets/Digicam/DSC06974.JPG" id="2_45r2v"]
 [ext_resource type="LabelSettings" uid="uid://ijr2ruqji7tl" path="res://label_popup_settings.tres" id="3_45r2v"]
+[ext_resource type="Script" uid="uid://bevkhs0t0cfm0" path="res://Scenes/Chase Scene/Script/glitch.gd" id="4_a36ln"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a36ln"]
 radius = 121.0661
@@ -60,5 +61,23 @@ offset_bottom = 228.99998
 scale = Vector2(24.005, 24.005)
 text = "RUN"
 label_settings = ExtResource("3_45r2v")
+
+[node name="GlitchLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="GlitchLayer" node_paths=PackedStringArray("camera")]
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_a36ln")
+camera = NodePath("../Camera2D")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="GlitchLayer"]
+position = Vector2(576, 324)
 
 [connection signal="input_event" from="Forward" to="." method="_on_forward_input_event"]
