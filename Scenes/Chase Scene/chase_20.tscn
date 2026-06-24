@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://2m761a55t8bd"]
 
 [ext_resource type="Script" uid="uid://c2bcnh7sqdrle" path="res://Scenes/Chase Scene/chase_20.gd" id="1_571cp"]
-[ext_resource type="Texture2D" uid="uid://co678f1ivp65u" path="res://Assets/Digicam/DSC06999.JPG" id="1_xdq3i"]
+[ext_resource type="Texture2D" uid="uid://mel6gamurmix" path="res://Assets/Chase_Scene/Screenshot 2026-06-24 082827.png" id="2_8e37c"]
 [ext_resource type="Script" uid="uid://bevkhs0t0cfm0" path="res://Scenes/Chase Scene/Script/glitch.gd" id="3_8e37c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0oqll"]
@@ -42,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.14, 0.14)
 mouse_filter = 2
-texture = ExtResource("1_xdq3i")
+texture = ExtResource("2_8e37c")
 
 [node name="Forward" type="Area2D" parent="."]
 

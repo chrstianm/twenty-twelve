@@ -10,15 +10,15 @@ var parable_cutscene_played2 := false
 var music_tracks = {
 	"static": preload("res://Assets/Audio/radio_static_2.MP3"),
 	"glitch": preload("res://Assets/Audio/glitch_static(1).MP3"),
-	"outside": preload("res://Assets/Audio/OutsideBGM.MP3"),
+	"outside": preload("res://Assets/Audio/Outside(15db).MP3"),
 	"vhs_static": preload("res://Assets/Audio/vhs_static.mp3"),
-	"ambiance_extreme": preload("res://Assets/Audio/ambiance_extreme(1).MP3"),
+	"ambiance_extreme": preload("res://Assets/Audio/ambiance_extreme(20db).MP3"),
 	"waltz": preload("res://Assets/Audio/Audio_Intro/intro_bgm(2).MP3"),
 	"bsod": preload("res://Assets/Audio/Audio_Intro/bsod_sfx.mp3"),
 	"parable_cutscene": preload("res://Assets/Audio/bgm_parable_cutscene.MP3"),
 	"testimony": preload("res://Assets/Audio/Audio_Intro/testimony.MP3"),
-	"runrabbit": preload("res://Assets/Audio/run rabbit.mp3"),
-	"ending": preload("res://Assets/Audio/ending.MP3"),
+	"runrabbit": preload("res://Assets/Audio/run_rabbit(20db).MP3"),
+	"ending": preload("res://Assets/Audio/ending(20db).MP3"),
 	"run": preload("res://Assets/Audio/copy_EC47487F-7632-4861-8E5A-802AD11A2B28.mp3")
 }
 
@@ -42,7 +42,7 @@ var sfx_sounds = {
 	"footstep": preload("res://Assets/Audio/corridor_footstep.MP3"),
 	"flashlight": preload("res://Assets/Audio/flashlight_on.MP3"),
 	"scream": preload("res://Assets/Audio/cutoff_scream.MP3"),
-	"testimony": preload("res://Assets/Audio/Audio_Intro/revised_testimony_1.MP3"),
+	"testimony": preload("res://Assets/Audio/testimony (20db).MP3"),
 	"pick_up": preload("res://Assets/Audio/Audio_Intro/pick_up_call.MP3")
 
 }
