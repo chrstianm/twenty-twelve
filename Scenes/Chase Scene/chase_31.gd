@@ -16,3 +16,7 @@ func _on_forward_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			await get_tree().create_timer(3.0).timeout
 			AudioManager.stop_all_bgm()
 			get_tree().change_scene_to_file("res://Scenes/ExtraScenes/police_report4.tscn")
+func _on_forward_mouse_entered() -> void:
+	CursorManager.set_hover()
+func _on_forward_mouse_exited() -> void:
+	CursorManager.set_normal()

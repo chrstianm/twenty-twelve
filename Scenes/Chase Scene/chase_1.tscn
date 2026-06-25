@@ -81,3 +81,5 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(576, 324)
 
 [connection signal="input_event" from="Forward" to="." method="_on_forward_input_event"]
+[connection signal="mouse_entered" from="Forward" to="." method="_on_forward_mouse_entered"]
+[connection signal="mouse_exited" from="Forward" to="." method="_on_forward_mouse_exited"]

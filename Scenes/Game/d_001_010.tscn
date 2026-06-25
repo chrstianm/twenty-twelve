@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://coihjeynghgh4"]
+[gd_scene load_steps=6 format=3 uid="uid://coihjeynghgh4"]
 
 [ext_resource type="Texture2D" uid="uid://vfddhjvkjwa" path="res://Assets/Digicam/DSC06886.JPG" id="1_cohmd"]
 [ext_resource type="Script" uid="uid://wbveed71wxbs" path="res://Scenes/Scripts/d_001_010.gd" id="1_fft85"]
+[ext_resource type="LabelSettings" uid="uid://ijr2ruqji7tl" path="res://label_popup_settings.tres" id="3_jh2ra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fft85"]
 size = Vector2(314.5, 36)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0oim"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="d_001_010" type="Control"]
 layout_mode = 3
@@ -49,6 +53,27 @@ texture = ExtResource("1_cohmd")
 position = Vector2(599, 524)
 shape = SubResource("RectangleShape2D_fft85")
 debug_color = Color(0.66915, 0.38691995, 0.84936535, 0.41960785)
+
+[node name="Redact" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 271.0
+offset_right = 814.0
+offset_bottom = 369.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 444.99997
+offset_top = 313.0
+offset_right = 620.7377
+offset_bottom = 336.0
+scale = Vector2(1.525, 1.525)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0oim")
+text = "you shouldn't have done that"
+label_settings = ExtResource("3_jh2ra")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="input_event" from="BACK" to="." method="_on_back_input_event"]
 [connection signal="mouse_entered" from="BACK" to="." method="_on_back_mouse_entered"]

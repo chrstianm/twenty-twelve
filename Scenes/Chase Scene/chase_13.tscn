@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bevkhs0t0cfm0" path="res://Scenes/Chase Scene/Script/glitch.gd" id="3_eye12"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0oqll"]
-radius = 121.0661
+radius = 37.336308
 
 [node name="chase13" type="Control"]
 layout_mode = 3
@@ -47,10 +47,11 @@ texture = ExtResource("2_eye12")
 [node name="Forward" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Forward"]
-position = Vector2(567, 320)
+position = Vector2(759, 235)
 shape = SubResource("CircleShape2D_0oqll")
 
 [node name="GlitchLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="GlitchLayer" node_paths=PackedStringArray("camera")]
 z_index = 10
@@ -69,3 +70,5 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(576, 324)
 
 [connection signal="input_event" from="Forward" to="." method="_on_forward_input_event"]
+[connection signal="mouse_entered" from="Forward" to="." method="_on_forward_mouse_entered"]
+[connection signal="mouse_exited" from="Forward" to="." method="_on_forward_mouse_exited"]
